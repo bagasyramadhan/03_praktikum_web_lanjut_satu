@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
@@ -25,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-// //Product
+//Product
 // Route::prefix('product')->group(function (){
 //     Route::get('/', [ProductController::class, 'home']);
 //     Route::get('/1', function(){
@@ -69,14 +71,16 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // //Contact us
-// Route::get('/contact', function(){
+// Route::get('/contact-us', function(){
 //     return redirect("https://www.educastudio.com/contact-us");
 // });
+// Route::get('/contact', [ContactUsController::class, 'home']);
 
 // //About Us
-// Route::get('/about', function(){
+// Route::get('/about-us', function(){
 //     return redirect("https://www.educastudio.com/about-us");
 // });
+// Route::get('/about', [AboutUsController::class, 'home']);
 
 
 // Route::get('/', [HomeController::class, 'home']);
