@@ -8,6 +8,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PengalamanController;
+use App\Http\Controllers\HobiController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -85,7 +88,15 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/sekolah', [HomeController::class, 'sekolah']);
-Route::get('/profile', [HomeController::class, 'profile']);
-Route::get('/kuliah', [HomeController::class, 'kuliah']);
+// Route::get('/', [HomeController::class, 'index']);
+// Route::get('/sekolah', [HomeController::class, 'sekolah']);
+// Route::get('/profile', [HomeController::class, 'profile']);
+// Route::get('/kuliah', [HomeController::class, 'kuliah']);
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/pengalaman', [PengalamanController::class, 'index'])->name('pengalaman');  
+Route::get('hobi/{slug}', [HobiController::class, 'show'])
+    ->name('detail');  
+
+Route::get('/hobi', [HobiController::class, 'index'])->name('hobi');

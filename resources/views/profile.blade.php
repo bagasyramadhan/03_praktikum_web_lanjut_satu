@@ -2,62 +2,20 @@
 @section("content")
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Data Diri</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active">Profile</li>
-                        <li class="breadcrumb-item active">Data Diri</li>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
     <section class="content">
+            <div style="height: 600px;" class="container d-flex justify-content-center align-items-center">
+                <div class="text-center">
+                @foreach($profile as $pro)
+                    <h2 style="color: white; font-weight: bold; font-size: 65px;">{{$pro->nim}}</h2>
+                    <h2 style="color: white; font-weight: bold; font-size: 65px;">{{$pro->nama}}</h2>
+                    <h2 style="color: white; font-weight: bold; font-size: 65px;">{{$pro->jurusan}} 
+                    / {{$pro->kelas}} / {{$pro->absen}}</h2>  
+                    <h2 style="color: white; font-weight: bold; font-size: 65px;"></h2>   
+                    @endforeach
+                </div>
 
-        <!-- Default box -->
-        <div class="centering">
-            <div class="card col-md-5">
-                <div class="card-header">
-                    <h3 class="card-title">Biodata</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">Muhammad Bagas Ramadhan</h3>
-                    <p class="text-muted text-center">2141720120</p>
-                    <ul class="list-group list-group-unbordered mb-3">
-                        <li class="list-group-item">
-                            <b>TTL</b> <span class="float-right">Malang 29 November 2002</span>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Agama</b> <span class="float-right">Islam</span>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Alamat</b> <span class="float-right">Jalan simpang teluk grajakan</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.card-body -->
-            </div>
-        </div>
-        <!-- /.card -->
-    </section>
-    <!-- /.content -->
-</div>
+            </div><!-- /.container-fluid -->
+        </section>
 @endsection
 
 @push("custom_css")
@@ -67,7 +25,4 @@
         justify-content: center;
     }
 </style>
-@endpush
-
-@push("custom_js")
 @endpush

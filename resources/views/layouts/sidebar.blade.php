@@ -34,6 +34,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('hobi') }}" class="nav-link {{ (request()->routeIs('hobi') ? 'active' : '') }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Hobi
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -43,7 +51,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/profile" class="nav-link">
+                            <a href="{{ route('profile') }}" class="nav-link {{ (request()->routeIs('profile') ? 'active' : '') }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Diri</p>
                             </a>
